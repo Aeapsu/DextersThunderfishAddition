@@ -1,7 +1,6 @@
 #    Script to detect and classify EODs in recordings of weakly electric pulse
 #    fish, Dexter Früh, 2018
-#
-#    it is suggested to save the recording in
+# #    it is suggested to save the recording in
 #       workingdirectory/recording/recording.WAV
 
 #    results will be saved in workingdirectory/recording/
@@ -57,7 +56,7 @@ import os
 from shutil import copy2
 
 from ownDataStructures import Peak, Tr, Peaklist
-import refactor.Dexters_thunderfish_addition.py as dta
+import DextersThunderfishAddition as dta
 
 from IPython import embed
 # parameters for the analysis
@@ -269,7 +268,8 @@ def main():         #  analyse_dex.py filename save plot new  (optional starttim
                            if np.count_nonzero(peaks_delete)==0:
                                unchanged = True
                        return peaks
-                   peaks = dta.discardnearbyevents(peaks[0],peaks[1],peakwidth)
+                   peakindices, peakx, peakh = dta.discardnearbyevents(peaks[0],peaks[1],peakwidth)
+                   peaks = peaks[:,peakindices]
 #                   plt.plot(datx)
 #                   plt.scatter(peaks[0],peaks[1])
 #                   plt.show()
@@ -434,7 +434,7 @@ def main():         #  analyse_dex.py filename save plot new  (optional starttim
                        # plots the data part and its detected and classified peaks
                        if plot_steps == True:
                            plotampwalkclasses_refactored(peaks, datx)
-                       bottletime.append(time.time())       #12
+                           pass
 
                    # map the analyzed EODs of the buffer part to the whole
                    # recording

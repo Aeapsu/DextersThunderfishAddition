@@ -1,0 +1,1564 @@
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  Dexters_thunderfish_addition.vim  __init__.py
+dexter@dynclamp ~/refactor $ rm Dexters_thunderfish_addition.vim
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git add .
+dexter@dynclamp ~/refactor $ git commit -m 'second commit'
+[master 8411cb5] second commit
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ create mode 100644 .gitignore
+ delete mode 100644 Dexters_thunderfish_addition.vim
+dexter@dynclamp ~/refactor $ git push origin master
+Username for 'https://github.com': Aeapsu
+Password for 'https://Aeapsu@github.com': 
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 303 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Aeapsu/DextersThunderfishAddition.git
+   07d1700..8411cb5  master -> master
+dexter@dynclamp ~/refactor $ cat .gitignore 
+analyse_dex_thinned.py
+dexter@dynclamp ~/refactor $ git add .
+dexter@dynclamp ~/refactor $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ git rm --cached
+usage: git rm [<options>] [--] <file>...
+
+    -n, --dry-run         dry run
+    -q, --quiet           do not list removed files
+    --cached              only remove from the index
+    -f, --force           override the up-to-date check
+    -r                    allow recursive removal
+    --ignore-unmatch      exit with a zero status even if nothing matched
+
+dexter@dynclamp ~/refactor $ git rm --cached
+usage: git rm [<options>] [--] <file>...
+
+    -n, --dry-run         dry run
+    -q, --quiet           do not list removed files
+    --cached              only remove from the index
+    -f, --force           override the up-to-date check
+    -r                    allow recursive removal
+    --ignore-unmatch      exit with a zero status even if nothing matched
+
+dexter@dynclamp ~/refactor $ git rm -r --cached
+usage: git rm [<options>] [--] <file>...
+
+    -n, --dry-run         dry run
+    -q, --quiet           do not list removed files
+    --cached              only remove from the index
+    -f, --force           override the up-to-date check
+    -r                    allow recursive removal
+    --ignore-unmatch      exit with a zero status even if nothing matched
+
+dexter@dynclamp ~/refactor $ git rm --cached .
+fatal: not removing '.' recursively without -r
+dexter@dynclamp ~/refactor $ git rm -r --cached .
+rm '.Dexters_thunderfish_addition.py.swp'
+rm '.analyse_dex_thinned.py.swo'
+rm '.analyse_dex_thinned.py.swp'
+rm '.gitignore'
+rm 'Dexters_thunderfish_addition.py'
+rm '__init__.py'
+rm 'analyse_dex_refactor.py'
+rm 'analyse_dex_thinned.py'
+dexter@dynclamp ~/refactor $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        deleted:    .Dexters_thunderfish_addition.py.swp
+        deleted:    .analyse_dex_thinned.py.swo
+        deleted:    .analyse_dex_thinned.py.swp
+        deleted:    .gitignore
+        deleted:    Dexters_thunderfish_addition.py
+        deleted:    __init__.py
+        deleted:    analyse_dex_refactor.py
+        deleted:    analyse_dex_thinned.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .Dexters_thunderfish_addition.py.swp
+        .analyse_dex_thinned.py.swo
+        .analyse_dex_thinned.py.swp
+        .gitignore
+        Dexters_thunderfish_addition.py
+        __init__.py
+        analyse_dex_refactor.py
+
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git add .
+dexter@dynclamp ~/refactor $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        deleted:    analyse_dex_thinned.py
+
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git commit -m 'removed analyse_dex_thinned from repo'
+[master a6ddb1e] removed analyse_dex_thinned from repo
+ 1 file changed, 2262 deletions(-)
+ delete mode 100644 analyse_dex_thinned.py
+dexter@dynclamp ~/refactor $ git push origin master
+Username for 'https://github.com': Aeapsu
+Password for 'https://Aeapsu@github.com': 
+Counting objects: 2, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 252 bytes | 0 bytes/s, done.
+Total 2 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Aeapsu/DextersThunderfishAddition.git
+   8411cb5..a6ddb1e  master -> master
+dexter@dynclamp ~/refactor $ git reset HEAD^
+dexter@dynclamp ~/refactor $ git add Dexters_thunderfish_addition.py 
+dexter@dynclamp ~/refactor $ git commit
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ git add Dexters_thunderfish_addition.py 
+dexter@dynclamp ~/refactor $ git add analyse_dex_refactor.py 
+dexter@dynclamp ~/refactor $ git commit
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ git branch DextersThunderfishAddition
+dexter@dynclamp ~/refactor $ git branch DextersThunderfishAddition HEAD^
+fatal: A branch named 'DextersThunderfishAddition' already exists.
+dexter@dynclamp ~/refactor $ git checkout
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+dexter@dynclamp ~/refactor $ git status
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ git branch DextersThunderfishAddition HEAD^
+fatal: A branch named 'DextersThunderfishAddition' already exists.
+dexter@dynclamp ~/refactor $ git branch -d DextersThunderfishAddition 
+Deleted branch DextersThunderfishAddition (was 8411cb5).
+dexter@dynclamp ~/refactor $ git branch DextersThunderfishAddition HEAD^
+dexter@dynclamp ~/refactor $ git status
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ git add .
+dexter@dynclamp ~/refactor $ git commit
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ git checkout -b second-branch
+Switched to a new branch 'second-branch'
+dexter@dynclamp ~/refactor $ git branch -d second-branch 
+error: Cannot delete the branch 'second-branch' which you are currently on.
+dexter@dynclamp ~/refactor $ git checkout master
+Switched to branch 'master'
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+dexter@dynclamp ~/refactor $ git branch -d second-branch 
+Deleted branch second-branch (was 8411cb5).
+dexter@dynclamp ~/refactor $ git checkout -b DexsRefactorStuff
+Switched to a new branch 'DexsRefactorStuff'
+dexter@dynclamp ~/refactor $ git rebase --onto HEAD^^ HEAD DexsRefactorStuff 
+fatal: Needed a single revision
+Does not point to a valid commit: HEAD^^
+dexter@dynclamp ~/refactor $ git rebase --onto HEAD^^ HEAD^ DexsRefactorStuff 
+fatal: Needed a single revision
+Does not point to a valid commit: HEAD^^
+dexter@dynclamp ~/refactor $ cat .git/HEAD
+ref: refs/heads/DexsRefactorStuff
+dexter@dynclamp ~/refactor $ cat .git/HEAD^
+cat: '.git/HEAD^': No such file or directory
+dexter@dynclamp ~/refactor $ cat show HEAD^
+cat: show: No such file or directory
+cat: 'HEAD^': No such file or directory
+dexter@dynclamp ~/refactor $ cat show HEAD
+cat: show: No such file or directory
+cat: HEAD: No such file or directory
+dexter@dynclamp ~/refactor $ git show HEAD
+commit 8411cb5b094982b4aaab368e27dea0f7ac884d4f
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:10:32 2018 +0100
+
+    second commit
+
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..41b9ed1
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1 @@
++analyse_dex_thinned.py
+diff --git a/Dexters_thunderfish_addition.vim b/Dexters_thunderfish_addition.vim
+deleted file mode 100644
+index c482a79..0000000
+--- a/Dexters_thunderfish_addition.vim
++++ /dev/null
+@@ -1 +0,0 @@
+-sflkj
+dexter@dynclamp ~/refactor $ git show HEAD^
+commit 07d1700c4d565eb09346975944694e87ecffd4b5
+commit 07d1700c4d565eb09346975944694e87ecffd4b5
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:04:15 2018 +0100
+
+    first commit
+
+diff --git a/.Dexters_thunderfish_addition.py.swp b/.Dexters_thunderfish_additio
+n.py.swp
+new file mode 100644
+index 0000000..77080c6
+Binary files /dev/null and b/.Dexters_thunderfish_addition.py.swp differ
+diff --git a/.analyse_dex_thinned.py.swo b/.analyse_dex_thinned.py.swo
+new file mode 100644
+index 0000000..38146d8
+Binary files /dev/null and b/.analyse_dex_thinned.py.swo differ
+diff --git a/.analyse_dex_thinned.py.swp b/.analyse_dex_thinned.py.swp
+new file mode 100644
+index 0000000..0474237
+Binary files /dev/null and b/.analyse_dex_thinned.py.swp differ
+diff --git a/Dexters_thunderfish_addition.py b/Dexters_thunderfish_addition.py
+new file mode 100644
+index 0000000..df4a809
+--- /dev/null
++++ b/Dexters_thunderfish_addition.py
+@@ -0,0 +1,183 @@
++import sys
++import numpy as np
++import copy
++from scipy.stats import gmainan
++from scipy import stats
++from scipy import signal
++from scipy import optimize
++import matplotlib
++from fish import ProgressFish
++import matplotlib.pyplot as plt
++from thunderfish.dataloader import open_data
++from thunderfish.peakdetection import detect_main
+...skipping...
+
+                   SUMMARY OF LESS COMMANDS
+
+      Commands marked with * may be preceded by a number, N.
+      Notes in parentheses indicate the behavior if N is given.
+      A key preceded by a caret indicates the Ctrl key; thus ^K is ctrl-K.
+
+  h  H                 Display this help.
+  q  :q  Q  :Q  ZZ     Exit.
+ ---------------------------------------------------------------------------
+
+                           MOVING
+
+  e  ^E  j  ^N  CR  *  Forward  one line   (or N lines).
+  y  ^Y  k  ^K  ^P  *  Backward one line   (or N lines).
+  f  ^F  ^V  SPACE  *  Forward  one window (or N lines).
+  b  ^B  ESC-v      *  Backward one window (or N lines).
+  z                 *  Forward  one window (and set window to N).
+  w                 *  Backward one window (and set window to N).
+  ESC-SPACE         *  Forward  one window, but don't stop at end-of-file.
+HELP -- Press RETURN for more, or q when done...skipping...
+index 0000000..0474237
+index 0000000..0474237
+Binary files /dev/null and b/.analyse_dex_thinned.py.swp differ
+diff --git a/Dexters_thunderfish_addition.py b/Dexters_thunderfish_addition.py
+new file mode 100644
+index 0000000..df4a809
+--- /dev/null
++++ b/Dexters_thunderfish_addition.py
+@@ -0,0 +1,183 @@
++import sys
++import numpy as np
++import copy
++from scipy.stats import gmainan
++from scipy import stats
++from scipy import signal
++from scipy import optimize
++import matplotlib
++from fish import ProgressFish
++import matplotlib.pyplot as plt
++from thunderfish.dataloader import open_data
++from thunderfish.peakdetection import detect_main
++from scipy.interpolate import interp1d
++from scipy.signal import savgol_filter
++from collections import deque
++import ntpath
++import nixio as nix
+dexter@dynclamp ~/refactor $ git show HEAD^^
+fatal: ambiguous argument 'HEAD^^': unknown revision or path not in the working 
+tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+dexter@dynclamp ~/refactor $ git status
+On branch DexsRefactorStuff
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ git push origin master
+Username for 'https://github.com': Aeapsu
+Password for 'https://Aeapsu@github.com': 
+To https://github.com/Aeapsu/DextersThunderfishAddition.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/Aeapsu/DextersThunderfish
+Addition.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+dexter@dynclamp ~/refactor $ git rebase DexsRefactorStuff 
+Current branch DexsRefactorStuff is up to date.
+dexter@dynclamp ~/refactor $ git rebase --onto Head^ DexsRefactorStuff 
+fatal: Needed a single revision
+Does not point to a valid commit: Head^
+dexter@dynclamp ~/refactor $ git rebase --onto HEAD^ DexsRefactorStuff 
+First, rewinding head to replay your work on top of it...
+dexter@dynclamp ~/refactor $ git rebase HEAD^ DexsRefactorStuff 
+fatal: Needed a single revision
+invalid upstream HEAD^
+dexter@dynclamp ~/refactor $ git rebase HEAD^ 
+fatal: Needed a single revision
+invalid upstream HEAD^
+dexter@dynclamp ~/refactor $ git rebase HEAD^^
+fatal: Needed a single revision
+invalid upstream HEAD^^
+dexter@dynclamp ~/refactor $ git show HEAD
+commit 07d1700c4d565eb09346975944694e87ecffd4b5
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:04:15 2018 +0100
+
+    first commit
+
+diff --git a/.Dexters_thunderfish_addition.py.swp b/.Dexters_thunderfish_additio
+n.py.swp
+new file mode 100644
+index 0000000..77080c6
+Binary files /dev/null and b/.Dexters_thunderfish_addition.py.swp differ
+diff --git a/.analyse_dex_thinned.py.swo b/.analyse_dex_thinned.py.swo
+new file mode 100644
+index 0000000..38146d8
+Binary files /dev/null and b/.analyse_dex_thinned.py.swo differ
+diff --git a/.analyse_dex_thinned.py.swp b/.analyse_dex_thinned.py.swp
+new file mode 100644
+index 0000000..0474237
+Binary files /dev/null and b/.analyse_dex_thinned.py.swp differ
+diff --git a/Dexters_thunderfish_addition.py b/Dexters_thunderfish_addition.py
+dexter@dynclamp ~/refactor $ git checkout master
+Switched to branch 'master'
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  Dexters_thunderfish_addition.py
+analyse_dex_thinned.py   __init__.py
+dexter@dynclamp ~/refactor $ git status
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ git log
+commit 8411cb5b094982b4aaab368e27dea0f7ac884d4f
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:10:32 2018 +0100
+
+    second commit
+
+commit 07d1700c4d565eb09346975944694e87ecffd4b5
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:04:15 2018 +0100
+
+    first commit
+dexter@dynclamp ~/refactor $ git checkout 
+DexsRefactorStuff            HEAD                         ORIG_HEAD 
+DextersThunderfishAddition   master                       origin/master 
+dexter@dynclamp ~/refactor $ git checkout DexsRefactorStuff 
+Switched to branch 'DexsRefactorStuff'
+dexter@dynclamp ~/refactor $ git status
+On branch DexsRefactorStuff
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  Dexters_thunderfish_addition.py   __init__.py
+analyse_dex_thinned.py   Dexters_thunderfish_addition.vim
+dexter@dynclamp ~/refactor $ git checkout 
+DexsRefactorStuff            HEAD                         ORIG_HEAD 
+DextersThunderfishAddition   master                       origin/master 
+dexter@dynclamp ~/refactor $ git checkout DextersThunderfishAddition 
+Switched to branch 'DextersThunderfishAddition'
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  Dexters_thunderfish_addition.py   __init__.py
+analyse_dex_thinned.py   Dexters_thunderfish_addition.vim
+dexter@dynclamp ~/refactor $ git status
+On branch DextersThunderfishAddition
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ git checkout master
+Switched to branch 'master'
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+dexter@dynclamp ~/refactor $ git branch -d 
+DexsRefactorStuff            DextersThunderfishAddition   master 
+dexter@dynclamp ~/refactor $ git branch -d DexsRefactorStuff 
+Deleted branch DexsRefactorStuff (was 07d1700).
+dexter@dynclamp ~/refactor $ git branch -d DextersThunderfishAddition 
+Deleted branch DextersThunderfishAddition (was 07d1700).
+dexter@dynclamp ~/refactor $ git branch 
+HEAD            master          ORIG_HEAD       origin/master   
+dexter@dynclamp ~/refactor $ git branch 
+HEAD            master          ORIG_HEAD       origin/master   
+dexter@dynclamp ~/refactor $ git status
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ git log
+commit 8411cb5b094982b4aaab368e27dea0f7ac884d4f
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:10:32 2018 +0100
+
+    second commit
+
+commit 07d1700c4d565eb09346975944694e87ecffd4b5
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:04:15 2018 +0100
+
+    first commit
+dexter@dynclamp ~/refactor $ git add .
+dexter@dynclamp ~/refactor $ git commit -m 'test'
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ git push origin master
+Username for 'https://github.com': Aeapsu
+Password for 'https://Aeapsu@github.com': 
+To https://github.com/Aeapsu/DextersThunderfishAddition.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/Aeapsu/DextersThunderfishAddition.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+dexter@dynclamp ~/refactor $ git show HEAD 
+commit 8411cb5b094982b4aaab368e27dea0f7ac884d4f
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:10:32 2018 +0100
+
+    second commit
+
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..41b9ed1
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1 @@
++analyse_dex_thinned.py
+diff --git a/Dexters_thunderfish_addition.vim b/Dexters_thunderfish_addition.vim
+deleted file mode 100644
+index c482a79..0000000
+--- a/Dexters_thunderfish_addition.vim
++++ /dev/null
+@@ -1 +0,0 @@
+-sflkj
+dexter@dynclamp ~/refactor $ git push origin master
+Username for 'https://github.com': Aeapsu
+Password for 'https://Aeapsu@github.com': 
+To https://github.com/Aeapsu/DextersThunderfishAddition.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/Aeapsu/DextersThunderfishAddition.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+dexter@dynclamp ~/refactor $ git pull
+Updating 8411cb5..a6ddb1e
+Fast-forward
+ analyse_dex_thinned.py | 2262 ---------------------------------------------------------------------
+ 1 file changed, 2262 deletions(-)
+ delete mode 100644 analyse_dex_thinned.py
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git checkout HEAD^
+Note: checking out 'HEAD^'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 8411cb5... second commit
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git commit 'test commit aus HEAD vor pull deletion'
+error: pathspec 'test commit aus HEAD vor pull deletion' did not match any file(s) known to git.
+dexter@dynclamp ~/refactor $ git commit -m 'test commit aus HEAD vor pull deletion'
+HEAD detached at 8411cb5
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ git add .
+dexter@dynclamp ~/refactor $ git status
+HEAD detached at 8411cb5
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git push origin master
+Username for 'https://github.com': Aeapsu
+Password for 'https://Aeapsu@github.com': 
+Everything up-to-date
+dexter@dynclamp ~/refactor $ git checkout master
+Previous HEAD position was 8411cb5... second commit
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git checkout 
+FETCH_HEAD      HEAD            master          ORIG_HEAD       origin/master   
+dexter@dynclamp ~/refactor $ git checkout 
+FETCH_HEAD      HEAD            master          ORIG_HEAD       origin/master   
+dexter@dynclamp ~/refactor $ git checkout HEAD
+Your branch is up-to-date with 'origin/master'.
+dexter@dynclamp ~/refactor $ git checkout master
+Already on 'master'
+Your branch is up-to-date with 'origin/master'.
+dexter@dynclamp ~/refactor $ git checkout HEAD
+Your branch is up-to-date with 'origin/master'.
+dexter@dynclamp ~/refactor $ git checkout master
+Already on 'master'
+Your branch is up-to-date with 'origin/master'.
+dexter@dynclamp ~/refactor $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ git log
+commit a6ddb1edb998d1ba94ebcf67e2ed03fa1caef2d0
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:17:27 2018 +0100
+
+    removed analyse_dex_thinned from repo
+
+commit 8411cb5b094982b4aaab368e27dea0f7ac884d4f
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:10:32 2018 +0100
+
+    second commit
+
+commit 07d1700c4d565eb09346975944694e87ecffd4b5
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:04:15 2018 +0100
+
+    first commit
+dexter@dynclamp ~/refactor $ git checkout -b 8411
+Switched to a new branch '8411'
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git checkout -b 
+8411            FETCH_HEAD      HEAD            master          ORIG_HEAD       origin/master 
+dexter@dynclamp ~/refactor $ git checkout -b 
+8411            FETCH_HEAD      HEAD            master          ORIG_HEAD       origin/master 
+dexter@dynclamp ~/refactor $ git checkout -b 
+8411            FETCH_HEAD      HEAD            master          ORIG_HEAD       origin/master 
+dexter@dynclamp ~/refactor $ git checkout -b 
+8411            FETCH_HEAD      HEAD            master          ORIG_HEAD       origin/master 
+dexter@dynclamp ~/refactor $ git checkout -b 
+8411            FETCH_HEAD      HEAD            master          ORIG_HEAD       origin/master 
+dexter@dynclamp ~/refactor $ git checkout -b 8411cb5b094982b4aaab368e27dea0f7ac884d4f
+Switched to a new branch '8411cb5b094982b4aaab368e27dea0f7ac884d4f'
+dexter@dynclamp ~/refactor $ git checkout -b new_branch 8411cb5b094982b4aaab368e27dea0f7ac884d4f
+warning: refname '8411cb5b094982b4aaab368e27dea0f7ac884d4f' is ambiguous.
+Git normally never creates a ref that ends with 40 hex characters
+because it will be ignored when you just specify 40-hex. These refs
+may be created by mistake. For example,
+
+  git checkout -b $br $(git rev-parse ...)
+
+where "$br" is somehow empty and a 40-hex ref is created. Please
+examine these refs and maybe delete them. Turn this message off by
+running "git config advice.objectNameWarning false"
+warning: refname '8411cb5b094982b4aaab368e27dea0f7ac884d4f' is ambiguous.
+Git normally never creates a ref that ends with 40 hex characters
+because it will be ignored when you just specify 40-hex. These refs
+may be created by mistake. For example,
+
+  git checkout -b $br $(git rev-parse ...)
+
+where "$br" is somehow empty and a 40-hex ref is created. Please
+examine these refs and maybe delete them. Turn this message off by
+running "git config advice.objectNameWarning false"
+Switched to a new branch 'new_branch'
+dexter@dynclamp ~/refactor $ git checkout -b new_branch 8411cb
+fatal: A branch named 'new_branch' already exists.
+dexter@dynclamp ~/refactor $ git log
+commit a6ddb1edb998d1ba94ebcf67e2ed03fa1caef2d0
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:17:27 2018 +0100
+
+    removed analyse_dex_thinned from repo
+
+commit 8411cb5b094982b4aaab368e27dea0f7ac884d4f
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:10:32 2018 +0100
+
+    second commit
+
+commit 07d1700c4d565eb09346975944694e87ecffd4b5
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:04:15 2018 +0100
+
+    first commit
+dexter@dynclamp ~/refactor $ git branch 
+8411                                       master 
+8411cb5b094982b4aaab368e27dea0f7ac884d4f   new_branch 
+FETCH_HEAD                                 ORIG_HEAD 
+HEAD                                       origin/master 
+dexter@dynclamp ~/refactor $ git branch -d 8411
+Deleted branch 8411 (was a6ddb1e).
+dexter@dynclamp ~/refactor $ git branch -d 8411cb5b094982b4aaab368e27dea0f7ac884d4f 
+Deleted branch 8411cb5b094982b4aaab368e27dea0f7ac884d4f (was a6ddb1e).
+dexter@dynclamp ~/refactor $ git branch -d new_branch 
+error: Cannot delete the branch 'new_branch' which you are currently on.
+dexter@dynclamp ~/refactor $ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+dexter@dynclamp ~/refactor $ git branch -d 
+master       new_branch   
+dexter@dynclamp ~/refactor $ git branch 
+FETCH_HEAD      HEAD            master          new_branch      ORIG_HEAD       origin/master 
+dexter@dynclamp ~/refactor $ git branch 
+FETCH_HEAD      HEAD            master          new_branch      ORIG_HEAD       origin/master 
+dexter@dynclamp ~/refactor $ git branch -d 
+master       new_branch   
+dexter@dynclamp ~/refactor $ git branch -d new_branch 
+Deleted branch new_branch (was a6ddb1e).
+dexter@dynclamp ~/refactor $ git branch 
+FETCH_HEAD      HEAD            master          ORIG_HEAD       origin/master   
+dexter@dynclamp ~/refactor $ git log
+commit a6ddb1edb998d1ba94ebcf67e2ed03fa1caef2d0
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:17:27 2018 +0100
+
+    removed analyse_dex_thinned from repo
+
+commit 8411cb5b094982b4aaab368e27dea0f7ac884d4f
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:10:32 2018 +0100
+
+    second commit
+
+commit 07d1700c4d565eb09346975944694e87ecffd4b5
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:04:15 2018 +0100
+
+    first commit
+dexter@dynclamp ~/refactor $ git checkout -b new_branch 07d1
+Switched to a new branch 'new_branch'
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  Dexters_thunderfish_addition.py   __init__.py
+analyse_dex_thinned.py   Dexters_thunderfish_addition.vim
+dexter@dynclamp ~/refactor $ git add .
+dexter@dynclamp ~/refactor $ git status
+On branch new_branch
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  Dexters_thunderfish_addition.py   __init__.py
+analyse_dex_thinned.py   Dexters_thunderfish_addition.vim
+dexter@dynclamp ~/refactor $ git log
+commit 07d1700c4d565eb09346975944694e87ecffd4b5
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:04:15 2018 +0100
+
+    first commit
+dexter@dynclamp ~/refactor $ gi checkout master
+gi: command not found
+dexter@dynclamp ~/refactor $ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+dexter@dynclamp ~/refactor $ git log
+commit a6ddb1edb998d1ba94ebcf67e2ed03fa1caef2d0
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:17:27 2018 +0100
+
+    removed analyse_dex_thinned from repo
+
+commit 8411cb5b094982b4aaab368e27dea0f7ac884d4f
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:10:32 2018 +0100
+
+    second commit
+
+commit 07d1700c4d565eb09346975944694e87ecffd4b5
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:04:15 2018 +0100
+
+    first commit
+dexter@dynclamp ~/refactor $ git checkout 
+FETCH_HEAD      HEAD            master          new_branch      ORIG_HEAD       origin/master 
+dexter@dynclamp ~/refactor $ git checkout new_branch 
+Switched to branch 'new_branch'
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  Dexters_thunderfish_addition.py   __init__.py
+analyse_dex_thinned.py   Dexters_thunderfish_addition.vim
+dexter@dynclamp ~/refactor $ git checkout -b new_branch 8411
+fatal: A branch named 'new_branch' already exists.
+dexter@dynclamp ~/refactor $ git checkout -b sec_commit_branch 8411
+Switched to a new branch 'sec_commit_branch'
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git checkout sec_commit_branch 
+Switched to branch 'sec_commit_branch'
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ ls -l
+total 204
+-rw-rw-r-- 1 dexter dexter 95201 Dec 12 11:23 analyse_dex_refactor.py
+-rw-rw-r-- 1 dexter dexter 95091 Dec 12 15:05 analyse_dex_thinned.py
+-rw-rw-r-- 1 dexter dexter  8713 Dec 12 11:18 Dexters_thunderfish_addition.py
+-rw-rw-r-- 1 dexter dexter     0 Dec 12 11:23 __init__.py
+dexter@dynclamp ~/refactor $ git checkout new_branch 
+Switched to branch 'new_branch'
+dexter@dynclamp ~/refactor $ ls -l
+total 208
+-rw-rw-r-- 1 dexter dexter 95201 Dec 12 11:23 analyse_dex_refactor.py
+-rw-rw-r-- 1 dexter dexter 95091 Dec 12 15:05 analyse_dex_thinned.py
+-rw-rw-r-- 1 dexter dexter  8713 Dec 12 11:18 Dexters_thunderfish_addition.py
+-rw-rw-r-- 1 dexter dexter     6 Dec 12 15:06 Dexters_thunderfish_addition.vim
+-rw-rw-r-- 1 dexter dexter     0 Dec 12 11:23 __init__.py
+dexter@dynclamp ~/refactor $ git checkout sec_commit_branch 
+Switched to branch 'sec_commit_branch'
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git add .
+dexter@dynclamp ~/refactor $ git checkout
+dexter@dynclamp ~/refactor $ git merge sec_commit
+merge: sec_commit - not something we can merge
+dexter@dynclamp ~/refactor $ git merge sec_commit_branch 
+Already up-to-date.
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git log
+commit 8411cb5b094982b4aaab368e27dea0f7ac884d4f
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:10:32 2018 +0100
+
+    second commit
+
+commit 07d1700c4d565eb09346975944694e87ecffd4b5
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:04:15 2018 +0100
+
+    first commit
+dexter@dynclamp ~/refactor $ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git merge sec_commit_branch 
+Already up-to-date.
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git checkout sec_commit_branch 
+Switched to branch 'sec_commit_branch'
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+dexter@dynclamp ~/refactor $ git merge sec_commit_branch 
+Already up-to-date.
+dexter@dynclamp ~/refactor $ git reflog
+a6ddb1e HEAD@{0}: checkout: moving from sec_commit_branch to master
+8411cb5 HEAD@{1}: checkout: moving from master to sec_commit_branch
+a6ddb1e HEAD@{2}: checkout: moving from sec_commit_branch to master
+8411cb5 HEAD@{3}: checkout: moving from new_branch to sec_commit_branch
+07d1700 HEAD@{4}: checkout: moving from sec_commit_branch to new_branch
+8411cb5 HEAD@{5}: checkout: moving from master to sec_commit_branch
+a6ddb1e HEAD@{6}: checkout: moving from sec_commit_branch to master
+8411cb5 HEAD@{7}: checkout: moving from new_branch to sec_commit_branch
+07d1700 HEAD@{8}: checkout: moving from master to new_branch
+a6ddb1e HEAD@{9}: checkout: moving from new_branch to master
+07d1700 HEAD@{10}: checkout: moving from master to new_branch
+a6ddb1e HEAD@{11}: checkout: moving from new_branch to master
+a6ddb1e HEAD@{12}: checkout: moving from 8411cb5b094982b4aaab368e27dea0f7ac884d4f to new_branch
+a6ddb1e HEAD@{13}: checkout: moving from 8411 to 8411cb5b094982b4aaab368e27dea0f7ac884d4f
+a6ddb1e HEAD@{14}: checkout: moving from master to 8411
+a6ddb1e HEAD@{15}: checkout: moving from master to master
+a6ddb1e HEAD@{16}: checkout: moving from master to master
+a6ddb1e HEAD@{17}: checkout: moving from 8411cb5b094982b4aaab368e27dea0f7ac884d4f to master
+8411cb5 HEAD@{18}: checkout: moving from master to HEAD^
+a6ddb1e HEAD@{19}: pull: Fast-forward
+8411cb5 HEAD@{20}: checkout: moving from DextersThunderfishAddition to master
+07d1700 HEAD@{21}: checkout: moving from DexsRefactorStuff to DextersThunderfishAddition
+07d1700 HEAD@{22}: checkout: moving from master to DexsRefactorStuff
+8411cb5 HEAD@{23}: checkout: moving from DexsRefactorStuff to master
+07d1700 HEAD@{24}: rebase finished: returning to refs/heads/DexsRefactorStuff
+07d1700 HEAD@{25}: rebase: checkout HEAD^
+8411cb5 HEAD@{26}: checkout: moving from master to DexsRefactorStuff
+8411cb5 HEAD@{27}: checkout: moving from second-branch to master
+8411cb5 HEAD@{28}: checkout: moving from master to second-branch
+8411cb5 HEAD@{29}: reset: moving to HEAD^
+a6ddb1e HEAD@{30}: commit: removed analyse_dex_thinned from repo
+8411cb5 HEAD@{31}: commit: second commit
+07d1700 HEAD@{32}: commit (initial): first commit
+dexter@dynclamp ~/refactor $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ git branch 
+FETCH_HEAD          master              ORIG_HEAD           sec_commit_branch   
+HEAD                new_branch          origin/master       
+dexter@dynclamp ~/refactor $ git checkout sec_commit_branch 
+Switched to branch 'sec_commit_branch'
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git merge master
+Updating 8411cb5..a6ddb1e
+Fast-forward
+ analyse_dex_thinned.py | 2262 ---------------------------------------------------------------------
+ 1 file changed, 2262 deletions(-)
+ delete mode 100644 analyse_dex_thinned.py
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+dexter@dynclamp ~/refactor $ git log
+commit a6ddb1edb998d1ba94ebcf67e2ed03fa1caef2d0
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:17:27 2018 +0100
+
+    removed analyse_dex_thinned from repo
+
+commit 8411cb5b094982b4aaab368e27dea0f7ac884d4f
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:10:32 2018 +0100
+
+    second commit
+
+commit 07d1700c4d565eb09346975944694e87ecffd4b5
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:04:15 2018 +0100
+
+    first commit
+dexter@dynclamp ~/refactor $ git checkout -b sec_com 8411
+Switched to a new branch 'sec_com'
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git branch -d 
+master              new_branch          sec_com             sec_commit_branch   
+dexter@dynclamp ~/refactor $ git branch -d sec_commit_branch 
+error: The branch 'sec_commit_branch' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D sec_commit_branch'.
+dexter@dynclamp ~/refactor $ git branch -D sec_commit_branch 
+Deleted branch sec_commit_branch (was a6ddb1e).
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+dexter@dynclamp ~/refactor $ git merge sec_com 
+Already up-to-date.
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git pull origin sec_com
+fatal: Couldn't find remote ref sec_com
+dexter@dynclamp ~/refactor $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ git checkout sec_com -- .
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   analyse_dex_thinned.py
+
+dexter@dynclamp ~/refactor $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   analyse_dex_thinned.py
+
+dexter@dynclamp ~/refactor $ git commit -m 're checkouted file that was pull deleted'
+[master d6bcd5c] re checkouted file that was pull deleted
+ 1 file changed, 2262 insertions(+)
+ create mode 100644 analyse_dex_thinned.py
+dexter@dynclamp ~/refactor $ git push origin master
+Username for 'https://github.com': Aeapsu
+Password for 'https://Aeapsu@github.com': 
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 21.94 KiB | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Aeapsu/DextersThunderfishAddition.git
+   a6ddb1e..d6bcd5c  master -> master
+dexter@dynclamp ~/refactor $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ git add Dexters_thunderfish_addition.py 
+dexter@dynclamp ~/refactor $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git checkout HEAD^
+Note: checking out 'HEAD^'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at a6ddb1e... removed analyse_dex_thinned from repo
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git checkout master
+Previous HEAD position was a6ddb1e... removed analyse_dex_thinned from repo
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git checkout HEAD
+Your branch is up-to-date with 'origin/master'.
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git reset HEAD^
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git checkout HEAD^
+Note: checking out 'HEAD^'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 8411cb5... second commit
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git status
+HEAD detached at 8411cb5
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ git checkout master
+Previous HEAD position was 8411cb5... second commit
+Switched to branch 'master'
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+dexter@dynclamp ~/refactor $ git status
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ git pull
+Updating a6ddb1e..d6bcd5c
+Fast-forward
+ analyse_dex_thinned.py | 2262 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 2262 insertions(+)
+ create mode 100644 analyse_dex_thinned.py
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git reset HEAD^
+dexter@dynclamp ~/refactor $ git status
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git status
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ git diff
+dexter@dynclamp ~/refactor $ git diff origin master
+fatal: ambiguous argument 'origin': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+dexter@dynclamp ~/refactor $ git diff master
+dexter@dynclamp ~/refactor $ git diff origin/master
+diff --git a/analyse_dex_thinned.py b/analyse_dex_thinned.py
+deleted file mode 100644
+index aa131ad..0000000
+--- a/analyse_dex_thinned.py
++++ /dev/null
+@@ -1,2262 +0,0 @@
+-#    Script to detect and classify EODs in recordings of weakly electric pulse
+-#    fish, Dexter Früh, 2018
+-#
+-#    it is suggested to save the recording in
+-#       workingdirectory/recording/recording.WAV
+-
+-#    results will be saved in workingdirectory/recording/
+-#
+-#    input:
+-#      -  [Recorded Timeseries] recording.WAV
+-#    outputs(optional):
+-#      -  [Detected and Classified EODs]
+-#            (Numpy Array with Shape (Number of EODs, 4 (Attributes of EODs)),
+-#            with the EOD-Attributes
+-#               -   x-location of the EOD
+-#                       (time/x-coordinate/datapoint in recording)
+-#               -   y-location of the EOD
+-#                       (Amplitude of the positive peak of the pulse-EOD)
+-#               -   height of the EOD(largest distance between peak and through in the EOD)
+-#               -   class of the EOD
+-#           eods_recording.npy
+-#      -   [plots of the results of each analyse step for each
+-#               analysepart (timeinterval of length = deltat) of the recording]
+-#
+-#    required command line arguments at function call
+-#        - save  : if True, save the results to a numpy file (possibly
+-#                                                          overwrite existing)
+-#        - plot  : if True, plot results in each analysestep
+-#        - new   : if True, do a new analysis of the recording, even if there
+-#                       is an existing analyzed .npy file with the right name.
+-#
+-#    call with:
+-#    python3 scriptname.py save plot new (starttime endtime[sec] for only
+diff --git a/analyse_dex_thinned.py b/analyse_dex_thinned.py
+deleted file mode 100644
+index aa131ad..0000000
+--- a/analyse_dex_thinned.py
++++ /dev/null
+@@ -1,2262 +0,0 @@
+-#    Script to detect and classify EODs in recordings of weakly electric pulse
+-#    fish, Dexter Früh, 2018
+-#
+-#    it is suggested to save the recording in
+-#       workingdirectory/recording/recording.WAV
+-
+-#    results will be saved in workingdirectory/recording/
+-#
+-#    input:
+-#      -  [Recorded Timeseries] recording.WAV
+-#    outputs(optional):
+-#      -  [Detected and Classified EODs]
+-#            (Numpy Array with Shape (Number of EODs, 4 (Attributes of EODs)),
+-#            with the EOD-Attributes
+-#               -   x-location of the EOD
+-#                       (time/x-coordinate/datapoint in recording)
+-#               -   y-location of the EOD
+-#                       (Amplitude of the positive peak of the pulse-EOD)
+-#               -   height of the EOD(largest distance between peak and through in the EOD)
+-#               -   class of the EOD
+-#           eods_recording.npy
+-#      -   [plots of the results of each analyse step for each
+-#               analysepart (timeinterval of length = deltat) of the recording]
+-#
+-#    required command line arguments at function call
+-#        - save  : if True, save the results to a numpy file (possibly
+-#                                                          overwrite existing)
+-#        - plot  : if True, plot results in each analysestep
+-#        - new   : if True, do a new analysis of the recording, even if there
+-#                       is an existing analyzed .npy file with the right name.
+-#
+-#    call with:
+-#    python3 scriptname.py save plot new (starttime endtime[sec] for only
+-#                                                       partial analysis)
+-#
+-#   other parameters are behind imports and some hardcoded at the relevant
+-#       codestep
+-import sys
+-import numpy as np
+dexter@dynclamp ~/refactor $ 
+dexter@dynclamp ~/refactor $ 
+dexter@dynclamp ~/refactor $ git status
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git fetch origin
+dexter@dynclamp ~/refactor $ git 
+add                  describe             merge                rm 
+am                   diff                 mergetool            shortlog 
+annotate             difftool             mv                   show 
+apply                fetch                name-rev             show-branch 
+archive              filter-branch        notes                stage 
+bisect               format-patch         pull                 stash 
+blame                fsck                 push                 status 
+branch               gc                   rebase               submodule 
+bundle               get-tar-commit-id    reflog               subtree 
+checkout             grep                 relink               tag 
+cherry               help                 remote               verify-commit 
+cherry-pick          imap-send            repack               whatchanged 
+clean                init                 replace              worktree 
+clone                instaweb             request-pull         
+commit               interpret-trailers   reset                
+config               log                  revert               
+dexter@dynclamp ~/refactor $ git --name-only master origin/master
+Unknown option: --name-only
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+dexter@dynclamp ~/refactor $ git diff --name-only master origin/master
+analyse_dex_thinned.py
+dexter@dynclamp ~/refactor $ git status
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ git diff --name-only origin/master
+analyse_dex_thinned.py
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git log
+commit a6ddb1edb998d1ba94ebcf67e2ed03fa1caef2d0
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:17:27 2018 +0100
+
+    removed analyse_dex_thinned from repo
+
+commit 8411cb5b094982b4aaab368e27dea0f7ac884d4f
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:10:32 2018 +0100
+
+    second commit
+
+commit 07d1700c4d565eb09346975944694e87ecffd4b5
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:04:15 2018 +0100
+
+    first commit
+dexter@dynclamp ~/refactor $ git checkout 8411
+Note: checking out '8411'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 8411cb5... second commit
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git checkout a6dd
+Previous HEAD position was 8411cb5... second commit
+HEAD is now at a6ddb1e... removed analyse_dex_thinned from repo
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git checkout master
+Switched to branch 'master'
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git pull
+Updating a6ddb1e..d6bcd5c
+Fast-forward
+ analyse_dex_thinned.py | 2262 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 2262 insertions(+)
+ create mode 100644 analyse_dex_thinned.py
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git checkout master
+Already on 'master'
+Your branch is up-to-date with 'origin/master'.
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git checkout HEAD^
+Note: checking out 'HEAD^'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at a6ddb1e... removed analyse_dex_thinned from repo
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git checkout master 
+Previous HEAD position was a6ddb1e... removed analyse_dex_thinned from repo
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git branch -d 
+master       new_branch   sec_com      
+dexter@dynclamp ~/refactor $ git branch -d new_branch 
+Deleted branch new_branch (was 07d1700).
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git reset HEAD^
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git checkout master
+Already on 'master'
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git pull
+Updating a6ddb1e..d6bcd5c
+Fast-forward
+ analyse_dex_thinned.py | 2262 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 2262 insertions(+)
+ create mode 100644 analyse_dex_thinned.py
+dexter@dynclamp ~/refactor $ git add .
+dexter@dynclamp ~/refactor $ git reset HEAD^
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git pull
+Updating a6ddb1e..d6bcd5c
+Fast-forward
+ analyse_dex_thinned.py | 2262 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 2262 insertions(+)
+ create mode 100644 analyse_dex_thinned.py
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git log
+commit d6bcd5c722852e36d69420a5b2c12d6b8ffbf773
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 15:16:59 2018 +0100
+
+    re checkouted file that was pull deleted
+
+commit a6ddb1edb998d1ba94ebcf67e2ed03fa1caef2d0
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:17:27 2018 +0100
+
+    removed analyse_dex_thinned from repo
+
+commit 8411cb5b094982b4aaab368e27dea0f7ac884d4f
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:10:32 2018 +0100
+
+    second commit
+
+commit 07d1700c4d565eb09346975944694e87ecffd4b5
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:04:15 2018 +0100
+
+    first commit
+dexter@dynclamp ~/refactor $ git reset HEAD^
+dexter@dynclamp ~/refactor $ git log
+commit a6ddb1edb998d1ba94ebcf67e2ed03fa1caef2d0
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:17:27 2018 +0100
+
+    removed analyse_dex_thinned from repo
+
+commit 8411cb5b094982b4aaab368e27dea0f7ac884d4f
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:10:32 2018 +0100
+
+    second commit
+
+commit 07d1700c4d565eb09346975944694e87ecffd4b5
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:04:15 2018 +0100
+
+    first commit
+dexter@dynclamp ~/refactor $ git pull
+Updating a6ddb1e..d6bcd5c
+Fast-forward
+ analyse_dex_thinned.py | 2262 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 2262 insertions(+)
+ create mode 100644 analyse_dex_thinned.py
+dexter@dynclamp ~/refactor $ git pull
+Already up-to-date.
+dexter@dynclamp ~/refactor $ git reset HEAD^
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git add .
+dexter@dynclamp ~/refactor $ git status
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ git add analyse_dex_thinned.py 
+The following paths are ignored by one of your .gitignore files:
+analyse_dex_thinned.py
+Use -f if you really want to add them.
+dexter@dynclamp ~/refactor $ vim .gitignore 
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ ls -l
+total 204
+-rw-rw-r-- 1 dexter dexter 95201 Dec 12 11:23 analyse_dex_refactor.py
+-rw-rw-r-- 1 dexter dexter 95091 Dec 12 16:05 analyse_dex_thinned.py
+-rw-rw-r-- 1 dexter dexter  8713 Dec 12 11:18 Dexters_thunderfish_addition.py
+-rw-rw-r-- 1 dexter dexter     0 Dec 12 11:23 __init__.py
+dexter@dynclamp ~/refactor $ vim .
+./                                    .Dexters_thunderfish_addition.py.swp
+../                                   .git/
+.analyse_dex_thinned.py.swo           .gitignore
+.analyse_dex_thinned.py.swp           
+dexter@dynclamp ~/refactor $ vim .
+./                                    .Dexters_thunderfish_addition.py.swp
+../                                   .git/
+.analyse_dex_thinned.py.swo           .gitignore
+.analyse_dex_thinned.py.swp           
+dexter@dynclamp ~/refactor $ vim .gitignore 
+dexter@dynclamp ~/refactor $ git pull
+Updating a6ddb1e..d6bcd5c
+Fast-forward
+ analyse_dex_thinned.py | 2262 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 2262 insertions(+)
+ create mode 100644 analyse_dex_thinned.py
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git branch DextersThunderfishAddition
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ git checkout DextersThunderfishAddition 
+Switched to branch 'DextersThunderfishAddition'
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git stash
+No local changes to save
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git status
+On branch DextersThunderfishAddition
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ rm analyse_dex_thinned.py 
+dexter@dynclamp ~/refactor $ rm __init__.py 
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  Dexters_thunderfish_addition.py
+dexter@dynclamp ~/refactor $ git add .
+dexter@dynclamp ~/refactor $ git status
+On branch DextersThunderfishAddition
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        deleted:    __init__.py
+        deleted:    analyse_dex_thinned.py
+
+dexter@dynclamp ~/refactor $ git commit -m 'Separate Branch, not needed files deleted'
+[DextersThunderfishAddition fd496eb] Separate Branch, not needed files deleted
+ 2 files changed, 2262 deletions(-)
+ delete mode 100644 __init__.py
+ delete mode 100644 analyse_dex_thinned.py
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  Dexters_thunderfish_addition.py
+dexter@dynclamp ~/refactor $ git status
+On branch DextersThunderfishAddition
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  analyse_dex_thinned.py  Dexters_thunderfish_addition.py  __init__.py
+dexter@dynclamp ~/refactor $ git log
+commit d6bcd5c722852e36d69420a5b2c12d6b8ffbf773
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 15:16:59 2018 +0100
+
+    re checkouted file that was pull deleted
+
+commit a6ddb1edb998d1ba94ebcf67e2ed03fa1caef2d0
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:17:27 2018 +0100
+
+    removed analyse_dex_thinned from repo
+
+commit 8411cb5b094982b4aaab368e27dea0f7ac884d4f
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:10:32 2018 +0100
+
+    second commit
+
+commit 07d1700c4d565eb09346975944694e87ecffd4b5
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:04:15 2018 +0100
+
+    first commit
+dexter@dynclamp ~/refactor $ git checkout 
+DextersThunderfishAddition   master                       sec_com 
+FETCH_HEAD                   ORIG_HEAD                    
+HEAD                         origin/master                
+dexter@dynclamp ~/refactor $ git checkout DextersThunderfishAddition 
+Switched to branch 'DextersThunderfishAddition'
+dexter@dynclamp ~/refactor $ git log
+commit fd496eb25a961dcb436b3a9b8abb84c8fa2b37b7
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 16:31:21 2018 +0100
+
+    Separate Branch, not needed files deleted
+
+commit d6bcd5c722852e36d69420a5b2c12d6b8ffbf773
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 15:16:59 2018 +0100
+
+    re checkouted file that was pull deleted
+
+commit a6ddb1edb998d1ba94ebcf67e2ed03fa1caef2d0
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:17:27 2018 +0100
+
+    removed analyse_dex_thinned from repo
+
+commit 8411cb5b094982b4aaab368e27dea0f7ac884d4f
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:10:32 2018 +0100
+
+    second commit
+
+commit 07d1700c4d565eb09346975944694e87ecffd4b5
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:04:15 2018 +0100
+
+    first commit
+dexter@dynclamp ~/refactor $ git status
+On branch DextersThunderfishAddition
+nothing to commit, working directory clean
+dexter@dynclamp ~/refactor $ ls
+analyse_dex_refactor.py  Dexters_thunderfish_addition.py
+dexter@dynclamp ~/refactor $ git log
+commit fd496eb25a961dcb436b3a9b8abb84c8fa2b37b7
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 16:31:21 2018 +0100
+
+    Separate Branch, not needed files deleted
+
+commit d6bcd5c722852e36d69420a5b2c12d6b8ffbf773
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 15:16:59 2018 +0100
+
+    re checkouted file that was pull deleted
+
+commit a6ddb1edb998d1ba94ebcf67e2ed03fa1caef2d0
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:17:27 2018 +0100
+
+    removed analyse_dex_thinned from repo
+
+commit 8411cb5b094982b4aaab368e27dea0f7ac884d4f
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:10:32 2018 +0100
+
+    second commit
+
+commit 07d1700c4d565eb09346975944694e87ecffd4b5
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:04:15 2018 +0100
+
+    first commit
+dexter@dynclamp ~/refactor $ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+dexter@dynclamp ~/refactor $ git log
+commit d6bcd5c722852e36d69420a5b2c12d6b8ffbf773
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 15:16:59 2018 +0100
+
+    re checkouted file that was pull deleted
+
+commit a6ddb1edb998d1ba94ebcf67e2ed03fa1caef2d0
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:17:27 2018 +0100
+
+    removed analyse_dex_thinned from repo
+
+commit 8411cb5b094982b4aaab368e27dea0f7ac884d4f
+Author: Dexter <dexter.frueh@student.uni-tuebingen.de>
+Date:   Wed Dec 12 14:10:32 2018 +0100
+
+    second commit
+
+dexter@dynclamp ~/refactor $                                                           | 185                #B, A = butter(5, cutoff / (fs / 3), btype='low') # 1st order Butte
+                                                                                       |     rworth low-pass
+                                                                                       | 186                #datx = lfilter(B, A, datx, axis=0)
+                                                                                       | 187                #plt.plot(datx)
+                                                                                       | 188                #plt.show()
+                                                                                       | 189                #sig = data[-320000:-1]
+                                                                                       | 190                #autocorr = signal.fftconvolve(sig, sig, mode='full')
+                                                                                       | 191                #plt.plot(autocorr)
+                                                                                       | 192                #plt.show()
+                                                                                       | 193                #f, Pxx_den = signal.periodogram(sig, samplerate)
+                                                                                       | 194                #plt.plot(Pxx_den)
+                                                                                       | 195                #plt.show()
+                                                                                       | 196                #x = savgol_filter(x, 11, 7)
+                                                                                       | 197 
+                                                                                       | 198                # ---------- analysis -----------
+                                                                                       | 199                # step1: detect peaks in timeseries
+                                                                                       | 200                pk, tr = detect_peaks(datx, thresh)
+                                                                                       | 201                troughs = tr
+                                                                                       | 202                bottletime.append(time.time())       #1
+                                                                                       | 203                # continue with analysis only if multiple peaks are detected
+                                                                                       | 204                if len(pk) > 2:
+!/bin/bash [dexter@dynclamp ~/refactor] [+-]                       " 1,1            All| 205                    def makepeaklist_refactor(pk,tr,data):
+ 53     main_h = np.zeros(len(main))                                                   | 206                    ### ## create 'peaks' with x,y and height and discard peaks tha
+ 54     main_real = np.ones(len(main))                                                 |     t seem to be no EODs based on their width and simple features like - no minimum cl
+ 55     # iteration over the properties of the single main                             |     ose to the maximum.
+ 56     for ind,(x, y, h, r) in enumainrate(np.nditer([main_x, main_y, main_h, main_rea| 207                        # decide whether a peak or a through is detected first
+    l], op_flags=[["read"],['read'],['readwrite'],['readwrite']])):                    | 208                        pkfirst = int((min(pk[0],tr[0])<tr[0]))
+ 57         l_side_ind = ind - mainfirst                                               | 209                        peaks_x = pk
+ 58         r_side_ind = l_side_ind + 1                                                | 210                        peaks_y = datx[pk]
+ 59         try:                                                                       | 211                        peaks_h = np.zeros(len(pk))
+ 60             l_side_x = side[l_side_ind]                                            | 212                        peaks_real = np.ones(len(pk))
+ 61             l_side_y = datx[l_side_x]                                              | 213                        for ind,(pk_x, pk_y, pk_h, pk_r) in enumerate(np.nditer([pe
+ 62             r_side_x = side[r_side_ind]                                            |     aks_x, peaks_y, peaks_h, peaks_real], op_flags=[["readwrite"],['readwrite'],['read
+ 63             r_side_y = datx[r_side_x]                                              |     write'],['readwrite']])):
+ 64             l_distance = x - l_side_x                                              | 214                            left_tr_ind = ind - pkfirst
+ 65             r_distance = r_side_x - x                                              | 215                            right_tr_ind = left_tr_ind + 1
+ 66         except:                                                                    | 216                            try:
+ 67             pass # ignore left or rightmost events which throw IndexError          | 217                                ltr_x = tr[left_tr_ind]
+ 68         # calculate distances to the two side events next to the main event and mar| 218                                ltr_y = datx[ltr_x]
+    k all events where the next side events are not closer than maximum event_width as | 219                                rtr_x = tr[right_tr_ind]
+    unreal. If an event might be an EOD, then calculate its height.                    | 220                                rtr_y = datx[rtr_x]
+ 69         if l_side_ind >= 0 and r_side_ind < len(side):                             | 221                            except:
+ 70             if min((l_distance),(r_distance)) > event_width:                       | 222                                pass
+Dexters_thunderfish_addition.py  [python]                          " 61,1           31% analyse_dex_refactor.py  [python]                                  " 205,37          8%
+:term
